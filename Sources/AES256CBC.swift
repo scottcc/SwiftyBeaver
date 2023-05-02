@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class AES256CBC {
+public final class AES256CBC {
 
     /// returns optional encrypted string via AES-256CBC
     /// automatically generates and puts a random IV at first 16 chars
