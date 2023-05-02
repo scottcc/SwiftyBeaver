@@ -13,7 +13,7 @@ public final class AES256CBC {
     /// returns optional encrypted string via AES-256CBC
     /// automatically generates and puts a random IV at first 16 chars
     /// the password must be exactly 32 chars long for AES-256
-    class func encryptString(_ str: String, password: String) -> String? {
+    public class func encryptString(_ str: String, password: String) -> String? {
         if !str.isEmpty && Data(password.utf8).count == 32 {
             let iv = randomText(16)
             let key = password
@@ -29,7 +29,7 @@ public final class AES256CBC {
 
     /// returns optional decrypted string via AES-256CBC
     /// IV need to be at first 16 chars, password must be 32 chars long
-    class func decryptString(_ str: String, password: String) -> String? {
+    public class func decryptString(_ str: String, password: String) -> String? {
         if Data(str.utf8).count > 16 && Data(password.utf8).count == 32 {
             // get AES initialization vector from first 16 chars
             let iv = String(str.prefix(16))
